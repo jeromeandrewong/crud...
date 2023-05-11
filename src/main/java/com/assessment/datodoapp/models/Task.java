@@ -32,10 +32,5 @@ public class Task implements Serializable{
     //creating default constructor
     public Task() {
     }
-    //for printing to console
-    @Override
-    public String toString() {
-        return "Task [id=" + id + ", title=" + title + ", description=" + description + ", completed=" + completed
-                + "]";
-    }
+
 }
