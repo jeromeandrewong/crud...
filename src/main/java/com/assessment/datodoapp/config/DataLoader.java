@@ -6,24 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.assessment.datodoapp.models.Item;
-import com.assessment.datodoapp.repositories.ItemRepo;
+import com.assessment.datodoapp.models.Task;
+import com.assessment.datodoapp.repositories.TaskRepo;
+
 
 @Component
 public class DataLoader implements CommandLineRunner{
     @Autowired
-    private ItemRepo itemRepo;
+    private TaskRepo taskRepo;
 
     @Override
     public void run(String... args) throws Exception{
-        List<Item> todos = (List<Item>) itemRepo.findAll();
+        List<Task> todos = (List<Task>) taskRepo.findAll();
 
         if (todos.size() == 0){
-            Item todo1 = new Item();
-            todo1.setDescription("test description 1");
-            todo1.setTitle("test title 1");
+            Task task = new Task();
+            task.setDescription("test description 1");
+            task.setTitle("test title 1");
 
-            itemRepo.save(todo1);
+            taskRepo.save(task);
 
 
         }

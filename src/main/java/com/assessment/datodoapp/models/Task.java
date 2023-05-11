@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Item implements Serializable{
+public class Task implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
@@ -30,12 +30,12 @@ public class Item implements Serializable{
     private boolean completed;
 
     //creating default constructor
-    public Item() {
+    public Task() {
     }
     //for printing to console
     @Override
     public String toString() {
-        return "Item [id=" + id + ", title=" + title + ", description=" + description + ", completed=" + completed
+        return "Task [id=" + id + ", title=" + title + ", description=" + description + ", completed=" + completed
                 + "]";
     }
 }
