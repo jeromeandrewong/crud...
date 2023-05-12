@@ -1,11 +1,12 @@
 package com.assessment.datodoapp.repositories;
 
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 
 import com.assessment.datodoapp.models.Task;
 
 @Repository
-public interface TaskRepo extends CrudRepository<Task, Long> {
+public interface TaskRepo extends JpaRepository<Task, Long> {
 
 }
