@@ -30,83 +30,59 @@ The base URL for all API endpoints is: http://localhost:8080
 
 ### Get all tasks
 
-URL: http://localhost:8080/tasks
-
-Method: GET
+- URL: http://localhost:8080/tasks
+- Method: GET
 
 ### Get all tasks
 
-URL: http://localhost:8080/tasks
-
-Method: GET
-
-Description: Get a list of all tasks
+- URL: http://localhost:8080/tasks
+- Method: GET
+- Description: Get a list of all tasks
 
 ### Create new task
 
-URL: http://localhost:8080/tasks
-
-Method: POST
-
-Description: Create a new task
-
-Request Body: Task object in JSON format with the following properties:
-
-- 'title' (string, required): title of the task
-- 'description' (string, optional): description of the task
+- URL: http://localhost:8080/tasks
+- Method: POST
+- Description: Create a new task
+- Request Body: Task object in JSON format with the following properties:
+  - 'title' (string, required): title of the task
+  - 'description' (string, optional): description of the task
 
 ### Get single task
 
-URL: http://localhost:8080/tasks/{id}
-
-Method: GET
-
-Description: Get a single task by ID
-
-Parameters:
-
-- '{id}': the ID of the task
+- URL: http://localhost:8080/tasks/{id}
+- Method: GET
+- Description: Get a single task by ID
+- Parameters:
+  - '{id}': the ID of the task
 
 ### Update task
 
-URL: http://localhost:8080/tasks/{id}
-
-Method: PUT
-
-Description: Update a task by ID
-
-Parameters:
-
-- '{id}': the ID of the task
+- URL: http://localhost:8080/tasks/{id}
+- Method: PUT
+- Description: Update a task by ID
+- Parameters:
+  - '{id}': the ID of the task
 
 ### Delete task
 
-URL: http://localhost:8080/tasks/{id}
-
-Method: DELETE
-
-Description: Delete a task by ID
-
-Parameters:
-
-- '{id}': the ID of the task
+- URL: http://localhost:8080/tasks/{id}
+- Method: DELETE
+- Description: Delete a task by ID
+- Parameters:
+  - '{id}': the ID of the task
 
 ### Delete all tasks
 
-URL: http://localhost:8080/tasks/
-
-Method: DELETE
-
-Description: Delete all tasks for testing purpose, not part of assessment
-
-Parameters:
-
-- '{id}': the ID of the task
+- URL: http://localhost:8080/tasks/
+- Method: DELETE
+- Description: Delete all tasks for testing purpose, not part of assessment
+- Parameters:
+  - '{id}': the ID of the task
 
 ## Custom Error handling
 
 - TaskNotFoundException: error thrown when task id does not exist
-
 - FieldIncompleteException: error thrown when 'title' field is empty when creating a new task
 
 ## Assumptions:
