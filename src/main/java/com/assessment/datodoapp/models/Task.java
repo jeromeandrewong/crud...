@@ -20,7 +20,7 @@ public class Task implements Serializable{
 
     @Getter
     @Setter
-    @Column(nullable = false)
+    @Column
     private String title;
 
     @Getter
