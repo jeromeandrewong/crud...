@@ -2,7 +2,6 @@ package com.assessment.datodoapp.models;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +19,6 @@ public class Task implements Serializable{
 
     @Getter
     @Setter
-    @Column
     private String title;
 
     @Getter

@@ -52,15 +52,29 @@ public class TaskController {
         }
     }
     @PutMapping("/{id}")
-    public Task updateTask(@PathVariable("id") Long id, @RequestBody Task task) {
-        return taskRepo.findById(id)
-            .map(record -> {
-                record.setTitle(task.getTitle());
-                record.setDescription(task.getDescription());
-                record.setCompleted(task.isCompleted());
-                Task updated = taskRepo.save(record);
-                return updated;
-            }).orElseThrow(() -> new TaskNotFoundException(id));
+    public Optional<Task> updateTask(@PathVariable("id") Long id, @RequestBody Task task) {
+        if (!taskRepo.existsById(id)) {
+            throw new TaskNotFoundException(id);
+        } else {
+            if (task.getTitle() == null || task.getDescription() == null || !task.isCompleted()) {
+                throw new FieldIncompleteException();
+            } else {
+                return taskRepo.findById(id).map(record -> {
+                    record.setTitle(task.getTitle());
+                    record.setDescription(task.getDescription());
+                    record.setCompleted(task.isCompleted());
+                    Task updated = taskRepo.save(record);
+                    return updated;
+                });
+            }
+        }
+            // .map(record -> {
+            //     record.setTitle(task.getTitle());
+            //     record.setDescription(task.getDescription());
+            //     record.setCompleted(task.isCompleted());
+            //     Task updated = taskRepo.save(record);
+            //     return updated;
+            // }).orElseThrow(() -> new TaskNotFoundException(id));
 
 
     }
