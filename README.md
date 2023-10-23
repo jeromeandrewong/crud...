@@ -1,8 +1,5 @@
-# DoctorAnywhere Assessment
 
-## Task
-
-To build a simple RESTful API using Java and Spring Boot.
+A simple RESTful API using Java and Spring Boot.
 
 ## Tech
 
